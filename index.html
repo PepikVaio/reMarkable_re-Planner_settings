@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Styling Example</title>
+    <link rel="stylesheet" href="generate-css.php">
+</head>
+<body>
+
+<h2>Dynamic Styling Example</h2>
+
+<!-- Přepínač pro skrytí/odkrytí subheaderu -->
+<label for="hideSubheader">Hide Subheader</label>
+<input type="checkbox" id="hideSubheader" onchange="toggleSubheader()">
+
+<!-- Stylizovaný div, který bude ovlivněn proměnnou CSS -->
+<div id="styledDiv">This is a styled div</div>
+
+<!-- Tlačítko pro export nastavení -->
+<button onclick="exportSettings()">Export Settings</button>
+
+
+<script src="script.js"></script>
+</body>
+</html>
