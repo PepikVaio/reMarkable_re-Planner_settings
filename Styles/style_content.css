@@ -1,0 +1,233 @@
+/*
+ *    ___         _           _             _   _   _              
+ *   / __|___ _ _| |_ ___ _ _| |_   ___ ___| |_| |_(_)_ _  __ _ ___
+ *  | (__/ _ \ ' \  _/ -_) ' \  _| (_-</ -_)  _|  _| | ' \/ _` (_-<
+ *   \___\___/_||_\__\___|_||_\__| /__/\___|\__|\__|_|_||_\__, /__/
+ *                                                        |___/    
+ */
+
+content {
+    width: 100%;
+    height: calc(85% - 15px);
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+}
+
+
+credits {
+    width: 100%;
+    height: 400px;
+    margin-top: 0px;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+
+contact {
+  width: calc(100% - 500px);
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0%;
+  left: 500px;
+}
+
+contact div:nth-child(1),
+contact div:nth-child(4) {
+    border-bottom: solid #7f7f7f 4px;
+}
+
+contact div {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+contact text {
+  height: 85px;
+  font-size: 40px;
+  line-height: 95px;
+  color: #7f7f7f;
+}
+
+menu {
+    width: 26%;
+    height: 100%;
+    font-size: 30px;
+    background-color: #7f7f7f;
+    border-radius: 30px 0px 0px 30px;
+    padding-top: 500px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+menu label {
+    display: flex;
+    padding: 10px 15px;
+}
+
+menu label:hover,
+menu ul li:hover {
+    cursor: pointer;
+    background-color: #f1f1f1;
+}
+
+menu ul {
+    display: none;
+
+    flex-direction: column;
+}
+
+menu a {
+    color: #333;
+}
+
+menu li {
+    padding: 10px 15px;
+}
+
+menu img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+settings {
+    width: calc(100% - 26% - var(--border) - var(--padding));
+    height: 800px;
+    position: absolute;
+    top: 500px;
+    left: 26%;
+}
+
+settings section {
+    height: 700px;
+    display: none;
+
+    flex-direction: column;
+    padding-left: 20px;
+}
+
+section p {
+    margin: 5px 0px 10px 5px;
+}
+
+subsection {
+    display: flex;
+    flex-direction: row;
+    column-gap: 15px;
+    margin: 20px 0px;
+    
+    border-bottom: solid #7f7f7f 4px;
+}
+
+
+subsection div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+subsection div input {
+    height: 50px;
+    width: 100%;
+}
+
+subsection label {
+    margin: 0px 0px 5px 5px;
+}
+
+
+.box_Input {
+    font-size: 16px;
+    margin-bottom: 25px;
+    padding: 10px 15px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease;
+}
+
+.box_Input:hover,
+.box_Input:hover {
+    box-shadow: 5px 5px 10px rgba(0, 123, 255, 1.5);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Zatím nemám použito */
+
+/*
+.hr_02 {
+  width: calc(100% - 350px - 30px);
+  height: 1px;
+  margin-left: 350px;
+}
+*/
+
+
+
+/*
+h3 {
+  width: calc(100% - 350px - 50px);
+  font-size: 70px;
+  display: flex;
+  justify-content: flex-end;
+  margin-left: 300px;
+  margin-top: 50px;
+  margin-bottom: 10px;
+}
+*/
+
+/*
+subsection {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+}
+*/
+
+/*
+subsection label {
+  width: calc(350px - 15px);
+  color: white;
+  font-size: 55px;
+  text-decoration: underline;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: flex-end;
+}
+*/
+
+/*
+subsection div {
+  width: calc(100% - 350px - 10px);
+  color: #7f7f7f;
+  font-size: 30px;
+  margin-top: 60px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+    
+    margin-left: 400px;
+}
+*/

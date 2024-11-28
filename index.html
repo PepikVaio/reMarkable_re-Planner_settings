@@ -1,25 +1,221 @@
-<!DOCTYPE html>
-<html lang="en">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dynamic Styling Example</title>
-    <link rel="stylesheet" href="generate-css.php">
+  <title>re-Planner (custom settings)</title>
+  <link rel="stylesheet" type="text/css" href="../Styles/style_body.css"/>
+  <link rel="stylesheet" type="text/css" href="../Styles/style_content.css"/>
+  <link rel="stylesheet" type="text/css" href="../Styles/style_font.css"/>
+  <link rel="stylesheet" type="text/css" href="../Styles/style_frame.css"/>
+  <link rel="stylesheet" type="text/css" href="../Styles/style_header.css"/>
+  <link rel="stylesheet" type="text/css" href="../Styles/style_image.css"/>
+  <link rel="stylesheet" type="text/css" href="../Styles/style_text.css"/>
+<style></style>
 </head>
+
 <body>
 
-<h2>re-Planner 2024</h2>
+  <header class="frame">
+    <h1>
+      <span id="text_Title_01"></span>
+      <span id="text_Title_02"></span>
+    </h1>
 
-<!-- Přepínač pro skrytí/odkrytí subheaderu -->
-<label for="hideSubheader">Nastavení</label>
+    <subheader>
+      <h2 id="text_Subtitle"></h2>
+    </subheader>
+
+  </header>
+
+  <content class="frame">
+
+    <!-- Vrchní strana - credits -->
+    <credits>
+      <picture id="image_Developer"></picture>
+      <contact>
+        <div>
+          <picture id="image_Name"></picture>
+          <text id="text_Name"></text>
+        </div>
+        <div>
+          <picture id="image_Email"></picture>
+          <a href="mailto:Wajsar.Josef@hotmail.com"><text id="text_Email"></text></a>
+        </div>
+        <div>
+          <picture id="image_Github"></picture>
+          <a href="https://github.com/PepikVaio"><text id="text_Github"></text></a>
+        </div>
+        <div>
+          <picture id="image_Shop"></picture>
+          <a href="https://WajsarJosef.etsy.com"><text id="text_Shop"></text></a>
+        </div>
+      </contact>
+    </credits>
+  
+    <!-- Levá strana - menu -->
+    <menu>
+      <!-- General sekce -->
+      <div>
+        <label onclick="show_Submenu('labe_01')">GENERAL</label>
+        <ul id="labe_01">
+          <a href="#" onclick="show_Settings('labe_01_01')"><li><img src="icon-account.png">Account</li></a>
+          <a href="#" onclick="show_Settings('labe_01_02')"><li><img src="icon-financial.png">reMarkable settings</li></a>
+          <a href="#" onclick="show_Settings('labe_01_03')"><li><img src="icon-tenant.png">Header settings</li></a>
+        </ul>
+      </div>
+
+      <!-- System sekce -->
+      <div>
+        <label onclick="show_Submenu('labe_02')">PAGES</label>
+        <ul id="labe_02">
+          <a href="#" onclick="show_Settings('labe_02_01')"><li><img src="icon-notifications.png">Yearly overview</li></a>
+          <a href="#" onclick="show_Settings('labe_02_02')"><li><img src="icon-preferences.png">Quarterly overview</li></a>
+          <a href="#" onclick="show_Settings('labe_02_03')"><li><img src="icon-preferences.png">Monthly planner</li></a>
+          <a href="#" onclick="show_Settings('labe_02_04')"><li><img src="icon-preferences.png">Monthly working notes</li></a>
+          <a href="#" onclick="show_Settings('labe_02_05')"><li><img src="icon-preferences.png">Monthly personal notes</li></a>
+        </ul>
+      </div>
+    </menu>
+
+    <!-- Pravá strana - settings -->
+    <settings>
 
 
-<input type="checkbox" id="hideSubheader" onchange="toggleSubheader()">
+<section id="labe_01_01">
 
-<!-- Tlačítko pro export nastavení -->
-<button onclick="exportSettings()">Uložit nastavení</button>
+<h2>Account</h2>
+<p>Real-time information and activities of your property.</p>
+<subsection>
+</subsection>
+    
+
+<h2>Full name</h2>
+<subsection>
+
+<div>
+<label>First name</label>
+<input class="box_Input" type="text" id="userInput" name="userInput" placeholder="Sem napište svůj text...">
+</div>
+
+<div>
+<label>Last name</label>
+<input class="box_Input" type="text" id="userInput" name="userInput" placeholder="Sem napište svůj text...">
+</div>          
+          
+</subsection>
 
 
-<script src="script.js"></script>
+
+<h2>Contact email</h2>
+<p>Manage your account email adress for the invoices.</p>
+<subsection>
+          
+<div>
+<label>Email</label>
+<input class="box_Input" type="text" id="userInput" name="userInput" placeholder="Sem napište svůj text...">
+</div>
+
+</subsection>
+
+
+    
+<h2>Password</h2>
+<p>Modify your current password.</p>
+<subsection>
+          
+<div>
+<label>New password</label>
+<input class="box_Input" type="text" id="userInput" name="userInput" placeholder="Sem napište svůj text...">
+</div>
+
+</subsection>
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+      <section id="labe_01_02">
+        <h2>reMarkable settings</h2>
+        <p>Tento obsah se zobrazí, když klikneš na "reMarkable settings".</p>
+      </section>
+
+      <section id="labe_01_03">
+        <h2>Header settings</h2>
+        <p>Tento obsah se zobrazí, když klikneš na "Header settings".</p>
+      </section>
+
+      <section id="labe_02_01">
+        <h2>Yearly overview</h2>
+        <p>Tento obsah se zobrazí, když klikneš na "Yearly overview".</p>
+      </section>
+
+      <section id="labe_02_02">
+        <h2>Quarterly overview</h2>
+        <p>Tento obsah se zobrazí, když klikneš na "Quarterly overview".</p>
+      </section>
+
+      <section id="labe_02_03">
+        <h2>Monthly planner</h2>
+        <p>Tento obsah se zobrazí, když klikneš na "Monthly planner".</p>
+      </section>
+
+      <section id="labe_02_04">
+        <h2>Monthly working notes</h2>
+        <p>Tento obsah se zobrazí, když klikneš na "Monthly working notes".</p>
+      </section>
+
+      <section id="labe_02_05">
+        <h2>Monthly personal notes</h2>
+        <p>Tento obsah se zobrazí, když klikneš na "Monthly personal notes".</p>
+      </section>
+    </settings>
+
+</content>
+
+<script>
+  // Funkce pro přepínání viditelnosti podmenu
+  function show_Submenu(ul_Id) {
+    var ul = document.getElementById(ul_Id);
+    if (ul.style.display === "flex") {
+      ul.style.display = "none";
+    } else {
+      ul.style.display = "flex";
+    }
+  }
+
+  // Funkce pro přepínání viditelnosti obsahu
+  function show_Settings(section_Id) {
+    // Skrýt všechny sekce
+    var sections = document.querySelectorAll('section');
+    sections.forEach(function(section) {
+      section.style.display = "none";
+    });
+
+    // Zobrazit požadovanou sekci
+    var section = document.getElementById(section_Id);
+    if (section) {
+      section.style.display = "flex";
+    }
+  }
+</script>
+
 </body>
 </html>
+
+
+
+
+
+
+
+

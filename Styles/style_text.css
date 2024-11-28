@@ -1,0 +1,23 @@
+/*
+ *   _____        _            _   _   _              
+ *  |_   _|____ _| |_   ______| |_| |_(_)_ _  __ _ ___
+ *    | |/ -_) \ /  _| (_-< -_)  _|  _| | ' \/ _` (_-<
+ *    |_|\___/_\_\\__| /__|___|\__|\__|_|_||_\__, /__/
+ *                                           |___/    
+ */
+
+/* Header */
+#text_Title_01::before {content: "re"}
+#text_Title_02::before {content: "-Planner"}
+
+/* Subheader */
+#text_Subtitle::before {content: "(custom settings)"}
+
+
+/* Credits */
+#text_Name::before {content: "Wajsar Josef";}
+#text_Email::before  {content: "Wajsar.Josef@hotmail.com";}
+#text_Github::before  {content: "https://github.com/PepikVaio";}
+#text_Shop::before  {content: "https://WajsarJosef.etsy.com";}
+
+/* Content */
