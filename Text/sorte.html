@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag and Drop Seznam s Enable/Disable, Přejmenováním a Přetahováním Sekcí</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.0/Sortable.min.js"></script>
+    <style>
+        /* Stylování seznamu */
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 20px;
+            max-width: 600px;
+        }
+        li {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        li:active {
+            background-color: #ddd;
+        }
+        /* Styl pro kategorie */
+.category {
+    display: flex;
+    justify-content: space-between;  /* Umístí obsah na levou a pravou stranu */
+    align-items: center;             /* Vertikálně zarovná obsah */
+    margin-bottom: 10px;             /* Mezery mezi sekcemi */
+}
+
+.category-left {
+    flex: 1;                         /* Vlevo */
+}
+
+.category-right {
+    display: flex;
+    align-items: center;             /* Vertikálně zarovná tlačítka */
+}
+
+.category-right span, .category-right input {
+    margin-left: 10px;               /* Mezery mezi tlačítky */
+}
+
+        /* Skrytí seznamu při sbalení */
+        .hidden {
+            display: none;
+        }
+        .toggle-button, .enable-disable-button, .rename-button {
+            margin-left: 10px;
+            cursor: pointer;
+            color: #007BFF;
+            font-weight: bold;
+        }
+        .disabled {
+            color: #888;
+        }
+        /* Styl pro jednotlivé sekce */
+        .section {
+            margin-bottom: 20px;
+            border: 2px solid #ddd;
+            padding: 10px;
+            border-radius: 8px;
+            background-color: #fafafa;
+        }
+        /* Možnost přetahování celých sekcí */
+        .sortable-container {
+            padding: 0;
+            margin: 0;
+        }
+        /* Styl pro input pro přejmenování */
+        .rename-input {
+            border: none;
+            background-color: #fafafa;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #333;
+            outline: none;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Seznam Plánovačů (Drag-and-Drop s Enable/Disable, Přejmenováním a Přetahováním Sekcí)</h2>
+    
+    <!-- Kontejner pro celé sekce (přetahování sekcí) -->
+    <div id="sortable-sections" class="sortable-container">
+        <!-- Sekce Monthly Planner -->
+        <div class="section" id="monthly-planner-section">
+            <div class="category">
+                <input type="text" id="monthly-planner-name" class="rename-input" value="Monthly Planner" onchange="renameSection('monthly-planner')">
+                <span class="rename-button" onclick="editName('monthly-planner')">Rename</span>
+                <span class="toggle-button" onclick="toggleVisibility('monthly-planner')">[+]</span>
+                <span class="enable-disable-button" onclick="toggleEnableDisable('monthly-planner')">Enable</span>
+            </div>
+            <ul id="monthly-planner">
+<li>./Text/Section_01/04_MonthlyPlanner/page_MonthlyPlanner_2024_01.html</li>
+<li>./Text/Section_01/04_MonthlyPlanner/page_MonthlyPlanner_2024_02.html</li>
+<li>./Text/Section_01/04_MonthlyPlanner/page_MonthlyPlanner_2024_03.html</li>
+<li>./Text/Section_01/04_MonthlyPlanner/page_MonthlyPlanner_2024_04.html</li>
+<li>./Text/Section_01/04_MonthlyPlanner/page_MonthlyPlanner_2024_05.html</li>
+<li>./Text/Section_01/04_MonthlyPlanner/page_MonthlyPlanner_2024_06.html</li>
+<li>./Text/Section_01/04_MonthlyPlanner/page_MonthlyPlanner_2024_07.html</li>
+<li>./Text/Section_01/04_MonthlyPlanner/page_MonthlyPlanner_2024_08.html</li>
+<li>./Text/Section_01/04_MonthlyPlanner/page_MonthlyPlanner_2024_09.html</li>
+<li>./Text/Section_01/04_MonthlyPlanner/page_MonthlyPlanner_2024_10.html</li>
+<li>./Text/Section_01/04_MonthlyPlanner/page_MonthlyPlanner_2024_11.html</li>
+<li>./Text/Section_01/04_MonthlyPlanner/page_MonthlyPlanner_2024_12.html</li>
+
+            </ul>
+        </div>
+
+        <!-- Sekce Weekly Planner -->
+        <div class="section" id="weekly-planner-section">
+            <div class="category">
+                <input type="text" id="weekly-planner-name" class="rename-input" value="Weekly Planner" onchange="renameSection('weekly-planner')">
+                <span class="rename-button" onclick="editName('weekly-planner')">Rename</span>
+                <span class="toggle-button" onclick="toggleVisibility('weekly-planner')">[+]</span>
+                <span class="enable-disable-button" onclick="toggleEnableDisable('weekly-planner')">Enable</span>
+            </div>
+            <ul id="weekly-planner">
+<li>./Text/Section_01/05_WeeklyPlanner/page_WeeklyPlanner_2024_01.html</li>
+<li>./Text/Section_01/05_WeeklyPlanner/page_WeeklyPlanner_2024_02.html</li>
+<li>./Text/Section_01/05_WeeklyPlanner/page_WeeklyPlanner_2024_03.html</li>
+<li>./Text/Section_01/05_WeeklyPlanner/page_WeeklyPlanner_2024_04.html</li>
+<li>./Text/Section_01/05_WeeklyPlanner/page_WeeklyPlanner_2024_05.html</li>
+<li>./Text/Section_01/05_WeeklyPlanner/page_WeeklyPlanner_2024_06.html</li>
+<li>./Text/Section_01/05_WeeklyPlanner/page_WeeklyPlanner_2024_07.html</li>
+<li>./Text/Section_01/05_WeeklyPlanner/page_WeeklyPlanner_2024_08.html</li>
+<li>./Text/Section_01/05_WeeklyPlanner/page_WeeklyPlanner_2024_09.html</li>
+<li>./Text/Section_01/05_WeeklyPlanner/page_WeeklyPlanner_2024_10.html</li>
+<li>./Text/Section_01/05_WeeklyPlanner/page_WeeklyPlanner_2024_11.html</li>
+<li>./Text/Section_01/05_WeeklyPlanner/page_WeeklyPlanner_2024_12.html</li>
+<li>./Text/Section_01/05_WeeklyPlanner/page_WeeklyPlanner_2024_13.html</li>
+<li>./Text/Section_01/05_WeeklyPlanner/page_WeeklyPlanner_2024_14.html</li>
+<li>./Text/Section_01/05_WeeklyPlanner/page_WeeklyPlanner_2024_15.html</li>
+<li>./Text/Section_01/05_WeeklyPlanner/page_WeeklyPlanner_2024_16.html</li>
+<li>./Text/Section_01/05_WeeklyPlanner/page_WeeklyPlanner_2024_17.html</li>
+<li>./Text/Section_01/05_WeeklyPlanner/page_WeeklyPlanner_2024_18.html</li>
+<li>./Text/Section_01/05_WeeklyPlanner/page_WeeklyPlanner_2024_19.html</li>
+<li>./Text/Section_01/05_WeeklyPlanner/page_WeeklyPlanner_2024_20.html</li>
+<li>./Text/Section_01/05_WeeklyPlanner/page_WeeklyPlanner_2024_21.html</li>
+<li>./Text/Section_01/05_WeeklyPlanner/page_WeeklyPlanner_2024_22.html</li>
+<li>./Text/Section_01/05_WeeklyPlanner/page_WeeklyPlanner_2024_23.html</li>
+<li>./Text/Section_01/05_WeeklyPlanner/page_WeeklyPlanner_2024_24.html</li>
+<li>./Text/Section_01/05_WeeklyPlanner/page_WeeklyPlanner_2024_25.html</li>
+<li>./Text/Section_01/05_WeeklyPlanner/page_WeeklyPlanner_2024_26.html</li>
+<li>./Text/Section_01/05_WeeklyPlanner/page_WeeklyPlanner_2024_27.html</li>
+<li>./Text/Section_01/05_WeeklyPlanner/page_WeeklyPlanner_2024_28.html</li>
+<li>./Text/Section_01/05_WeeklyPlanner/page_WeeklyPlanner_2024_29.html</li>
+<li>./Text/Section_01/05_WeeklyPlanner/page_WeeklyPlanner_2024_30.html</li>
+<li>./Text/Section_01/05_WeeklyPlanner/page_WeeklyPlanner_2024_31.html</li>
+<li>./Text/Section_01/05_WeeklyPlanner/page_WeeklyPlanner_2024_32.html</li>
+<li>./Text/Section_01/05_WeeklyPlanner/page_WeeklyPlanner_2024_33.html</li>
+<li>./Text/Section_01/05_WeeklyPlanner/page_WeeklyPlanner_2024_34.html</li>
+<li>./Text/Section_01/05_WeeklyPlanner/page_WeeklyPlanner_2024_35.html</li>
+<li>./Text/Section_01/05_WeeklyPlanner/page_WeeklyPlanner_2024_36.html</li>
+<li>./Text/Section_01/05_WeeklyPlanner/page_WeeklyPlanner_2024_37.html</li>
+<li>./Text/Section_01/05_WeeklyPlanner/page_WeeklyPlanner_2024_38.html</li>
+<li>./Text/Section_01/05_WeeklyPlanner/page_WeeklyPlanner_2024_39.html</li>
+<li>./Text/Section_01/05_WeeklyPlanner/page_WeeklyPlanner_2024_40.html</li>
+<li>./Text/Section_01/05_WeeklyPlanner/page_WeeklyPlanner_2024_41.html</li>
+<li>./Text/Section_01/05_WeeklyPlanner/page_WeeklyPlanner_2024_42.html</li>
+<li>./Text/Section_01/05_WeeklyPlanner/page_WeeklyPlanner_2024_43.html</li>
+<li>./Text/Section_01/05_WeeklyPlanner/page_WeeklyPlanner_2024_44.html</li>
+<li>./Text/Section_01/05_WeeklyPlanner/page_WeeklyPlanner_2024_45.html</li>
+<li>./Text/Section_01/05_WeeklyPlanner/page_WeeklyPlanner_2024_46.html</li>
+<li>./Text/Section_01/05_WeeklyPlanner/page_WeeklyPlanner_2024_47.html</li>
+<li>./Text/Section_01/05_WeeklyPlanner/page_WeeklyPlanner_2024_48.html</li>
+<li>./Text/Section_01/05_WeeklyPlanner/page_WeeklyPlanner_2024_49.html</li>
+<li>./Text/Section_01/05_WeeklyPlanner/page_WeeklyPlanner_2024_50.html</li>
+<li>./Text/Section_01/05_WeeklyPlanner/page_WeeklyPlanner_2024_51.html</li>
+<li>./Text/Section_01/05_WeeklyPlanner/page_WeeklyPlanner_2024_52.html</li>
+            </ul>
+        </div>
+
+        <!-- Sekce Daily Planner -->
+        <div class="section" id="daily-planner-section">
+            <div class="category">
+                <input type="text" id="daily-planner-name" class="rename-input" value="Daily Planner" onchange="renameSection('daily-planner')">
+                <span class="rename-button" onclick="editName('daily-planner')">Rename</span>
+                <span class="toggle-button" onclick="toggleVisibility('daily-planner')">[+]</span>
+                <span class="enable-disable-button" onclick="toggleEnableDisable('daily-planner')">Enable</span>
+            </div>
+            <ul id="daily-planner">
+<li>./Text/Section_01/06_page_DailyPlanner_01_01.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_01_02.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_01_03.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_01_04.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_01_05.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_01_06.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_01_07.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_01_08.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_01_09.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_01_10.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_01_11.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_01_12.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_01_13.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_01_14.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_01_15.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_01_16.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_01_17.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_01_18.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_01_19.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_01_20.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_01_21.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_01_22.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_01_23.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_01_24.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_01_25.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_01_26.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_01_27.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_01_28.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_01_29.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_01_30.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_01_31.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_02_01.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_02_02.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_02_03.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_02_04.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_02_05.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_02_06.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_02_07.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_02_08.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_02_09.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_02_10.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_02_11.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_02_12.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_02_13.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_02_14.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_02_15.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_02_16.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_02_17.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_02_18.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_02_19.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_02_20.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_02_21.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_02_22.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_02_23.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_02_24.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_02_25.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_02_26.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_02_27.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_02_28.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_02_29.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_02_30.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_02_31.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_03_01.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_03_02.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_03_03.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_03_04.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_03_05.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_03_06.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_03_07.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_03_08.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_03_09.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_03_10.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_03_11.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_03_12.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_03_13.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_03_14.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_03_15.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_03_16.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_03_17.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_03_18.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_03_19.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_03_20.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_03_21.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_03_22.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_03_23.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_03_24.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_03_25.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_03_26.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_03_27.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_03_28.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_03_29.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_03_30.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_03_31.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_04_01.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_04_02.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_04_03.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_04_04.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_04_05.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_04_06.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_04_07.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_04_08.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_04_09.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_04_10.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_04_11.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_04_12.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_04_13.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_04_14.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_04_15.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_04_16.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_04_17.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_04_18.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_04_19.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_04_20.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_04_21.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_04_22.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_04_23.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_04_24.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_04_25.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_04_26.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_04_27.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_04_28.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_04_29.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_04_30.html</li>
+<li>./Text/Section_01/06_page_DailyPlanner_04_31.html</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Funkce pro sbalení/rozbalení kategorií
+        function toggleVisibility(id) {
+            var element = document.getElementById(id);
+            var button = element.previousElementSibling.querySelector('.toggle-button');
+            element.classList.toggle('hidden');
+            if (element.classList.contains('hidden')) {
+                button.textContent = '[+]'; // Ukázat, že je sbaleno
+            } else {
+                button.textContent = '[-]'; // Ukázat, že je rozbaleno
+            }
+        }
+
+        // Funkce pro zapnutí/vypnutí kategorií
+        function toggleEnableDisable(id) {
+            var element = document.getElementById(id);
+            var button = element.previousElementSibling.querySelector('.enable-disable-button');
+
+            if (element.classList.contains('disabled')) {
+                // Pokud je sekce zakázaná, povolíme ji
+                element.classList.remove('disabled');
+                button.textContent = 'Disable';
+                button.style.color = '#007BFF';
+            } else {
+                // Pokud je sekce povolená, zakážeme ji
+                element.classList.add('disabled');
+                button.textContent = 'Enable';
+                button.style.color = '#888';
+                // Sbalíme sekci při zakázání
+                toggleVisibility(id);
+            }
+        }
+
+        // Funkce pro změnu názvu sekce
+        function renameSection(id) {
+            var input = document.getElementById(id + '-name');
+            var sectionName = input.value;
+            document.getElementById(id + '-name').setAttribute('value', sectionName);
+        }
+
+        // Funkce pro aktivaci pole pro přejmenování sekce
+        function editName(id) {
+            var input = document.getElementById(id + '-name');
+            input.focus();
+        }
+
+        // Inicializace SortableJS pro každou sekci (celkové přetahování sekcí)
+        var sortableSections = new Sortable(document.getElementById('sortable-sections'), {
+            animation: 150,
+            group: 'sections', // Skupina pro přetahování celých sekcí
+            handle: '.category',
+            onEnd: function(evt) {
+                console.log('Nové pořadí sekcí:', evt.from.children);
+            }
+        });
+
+        // Inicializace SortableJS pro každou jednotlivou sekci (přetahování položek)
+        var sortableDaily = new Sortable(document.getElementById('daily-planner'), {
+            animation: 150,
+            group: 'planners', // Sdílíme tuto skupinu mezi sekcemi
+            handle: 'li',
+            onEnd: function(evt) {
+                console.log('Nové pořadí pro Daily Planner:', evt.from.children);
+            }
+        });
+
+        var sortableWeekly = new Sortable(document.getElementById('weekly-planner'), {
+            animation: 150,
+            group: 'planners',
+            handle: 'li',
+            onEnd: function(evt) {
+                console.log('Nové pořadí pro Weekly Planner:', evt.from.children);
+            }
+        });
+
+        var sortabledaily = new Sortable(document.getElementById('daily-planner'), {
+            animation: 150,
+            group: 'planners',
+            handle: 'li',
+            onEnd: function(evt) {
+                console.log('Nové pořadí pro daily Planner:', evt.from.children);
+            }
+        });
+
+        var sortableMonthly = new Sortable(document.getElementById('monthly-planner'), {
+            animation: 150,
+            group: 'planners',
+            handle: 'li',
+            onEnd: function(evt) {
+                console.log('Nové pořadí pro Monthly Planner:', evt.from.children);
+            }
+        });
+    </script>
+</body>
+</html>
