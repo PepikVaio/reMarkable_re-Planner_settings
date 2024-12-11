@@ -16,7 +16,7 @@ header {
 }
 
 header h1 {
-  color: #7f7f7f;
+  color: var(--main_Background-Color);
   font-size: 150px;
   font-family: "Arizonia Regular";
   text-decoration: underline;
@@ -30,7 +30,7 @@ header h1 span:nth-child(1) {
 }
 
 header h1 :first-letter {
-  color: red;
+  color: var(--main_Color);
 }
 
 subheader {

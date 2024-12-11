@@ -11,12 +11,12 @@
     <link rel="stylesheet" type="text/css" href="./Styles/style_frame.css"/>
     <link rel="stylesheet" type="text/css" href="./Styles/style_header.css"/>
     <link rel="stylesheet" type="text/css" href="./Styles/style_image.css"/>
-    <link rel="stylesheet" type="text/css" href="./Styles/style_mediaQueries.css"/>
+    <link rel="stylesheet" type="text/css" href="./Styles/style_media_queries.css"/>
     <link rel="stylesheet" type="text/css" href="./Styles/style_text.css"/>
 
-    <script src="./JavaScripts/export_Settings.js"></script>
-    <script src="./JavaScripts/show_Submenu.js"></script>
-    <script src="./JavaScripts/show_Subsections.js"></script>
+    <script src="./JavaScripts/javascript_export_settings.js"></script>
+    <script src="./JavaScripts/javascript_show_submenu.js"></script>
+    <script src="./JavaScripts/javascript_show_subsections.js"></script>
 <style>
 
 
@@ -44,6 +44,9 @@
 
   <content class="frame">
 
+    <!-- Box nad menu -->
+    <div class="box_Gray"></div>
+
     <!-- Vrchní strana - credits -->
     <credits>
       <picture id="image_Developer"></picture>
@@ -68,26 +71,79 @@
     </credits>
   
     <!-- Levá strana - menu -->
-    <menu>
+    <menu class="test">
       <!-- General sekce -->
-      <div>
+      <div class="settings_General">
         <label onclick="show_Submenu('labe_01')">GENERAL</label>
         <ul id="labe_01">
-          <a href="#" onclick="show_Settings2('labe_01_01', 'Text/General/page_Account.html')"><li><img src="icon-account.png">Account</li></a>
-          <a href="#" onclick="show_Settings2('labe_01_02', 'Text/General/page_Account.html')"><li><img src="icon-account.png">reMarkable settings</li></a>
-          <a href="#" onclick="show_Settings('labe_01_03')"><li><img src="icon-tenant.png">Header settings</li></a>
+          <li onclick="show_Settings2('labe_01_01', 'Text/General/page_Account.html')"><img src="icon-account.png">Account</li>
+          <li onclick="show_Settings2('labe_01_02', 'Text/General/page_remarkable_settings.html')"><img src="icon-account.png">reMarkable settings</li>
+          <li onclick="show_Settings('labe_01_03', 'Text/General/page_header_settings.html')"><img src="icon-tenant.png">Header settings</li>
         </ul>
       </div>
 
-      <!-- System sekce -->
-      <div>
+      <!-- Pages sekce -->
+      <div class="settings_Pages">
         <label onclick="show_Submenu('labe_02')">PAGES</label>
         <ul id="labe_02">
-          <a href="#" onclick="show_Settings('labe_02_01')"><li><img src="icon-notifications.png">Yearly overview</li></a>
-          <a href="#" onclick="show_Settings('labe_02_02')"><li><img src="icon-preferences.png">Quarterly overview</li></a>
-          <a href="#" onclick="show_Settings('labe_02_03')"><li><img src="icon-preferences.png">Monthly planner</li></a>
-          <a href="#" onclick="show_Settings('labe_02_04')"><li><img src="icon-preferences.png">Monthly working notes</li></a>
-          <a href="#" onclick="show_Settings('labe_02_05')"><li><img src="icon-preferences.png">Monthly personal notes</li></a>
+          <li onclick="show_Submenu('labe_02_01')"><img src="icon-notifications.png">01 Kalendář / Plánování
+              <ul id="labe_02_01">
+                  <li onclick="show_Settings('labe_02_01_01')"><img src="icon-notifications.png">Yearly overview</li>
+                  <li onclick="show_Settings('labe_02_01_02')"><img src="icon-preferences.png">Quarterly overview</li>
+                  <li onclick="show_Settings('labe_02_01_03')"><img src="icon-preferences.png">Monthly planner</li>
+                  <li onclick="show_Settings('labe_02_01_04')"><img src="icon-preferences.png">Monthly work. not.</li>
+                  <li onclick="show_Settings('labe_02_01_05')"><img src="icon-preferences.png">Monthly per. not.</li>
+                  <li onclick="show_Settings('labe_02_01_06')"><img src="icon-preferences.png">Monthly habbits</li>
+                  <li onclick="show_Settings('labe_02_01_07')"><img src="icon-preferences.png">Weekly planner</li>
+                  <li onclick="show_Settings('labe_02_01_08')"><img src="icon-preferences.png">Daily planner</li>
+              </ul>
+              </li>
+
+          <li onclick="show_Submenu('labe_02_02')"><img src="icon-notifications.png">02 Myšlenky
+              <ul id="labe_02_02">
+                  <li onclick="show_Settings('labe_02_02_01')"><img src="icon-preferences.png">Poznámky</li>
+                  <li onclick="show_Settings('labe_02_02_02')"><img src="icon-preferences.png">Úkoly</li>
+                  <li onclick="show_Settings('labe_02_02_03')"><img src="icon-preferences.png">Projekty</li>
+                  <li onclick="show_Settings('labe_02_02_04')"><img src="icon-preferences.png">Zápisy z jednání</li>
+                  <li onclick="show_Settings('labe_02_02_05')"><img src="icon-notifications.png">Brainstorming</li>
+                  <li onclick="show_Settings('labe_02_02_06')"><img src="icon-preferences.png">Ishikawa diagram</li>
+                  <li onclick="show_Settings('labe_02_02_07')"><img src="icon-preferences.png">Rocní cíle</li>
+              </ul>
+              </li>
+
+          <li onclick="show_Submenu('labe_02_03')"><img src="icon-notifications.png">03 Zábava
+              <ul id="labe_02_03">
+                  <li onclick="show_Settings('labe_02_03_01')"><img src="icon-notifications.png">Cestovní plánovač</li>
+                  <li onclick="show_Settings('labe_02_03_02')"><img src="icon-preferences.png">Plánovač oslav</li>
+                  <li onclick="show_Settings('labe_02_03_03')"><img src="icon-preferences.png">Film</li>
+                  <li onclick="show_Settings('labe_02_03_04')"><img src="icon-preferences.png">Hudba</li>
+                  <li onclick="show_Settings('labe_02_03_05')"><img src="icon-preferences.png">Kniha</li>
+                  <li onclick="show_Settings('labe_02_03_06')"><img src="icon-preferences.png">Seznam přání</li>
+                  <li onclick="show_Settings('labe_02_03_07')"><img src="icon-preferences.png">Samolepky</li>
+              </ul>
+              </li>
+
+          <li onclick="show_Submenu('labe_02_04')"><img src="icon-notifications.png">04 Kondice / zdraví
+              <ul id="labe_02_04">
+                  <li onclick="show_Settings('labe_02_04_01')"><img src="icon-notifications.png">Nákupní seznam</li>
+                  <li onclick="show_Settings('labe_02_04_02')"><img src="icon-preferences.png">Recepty</li>
+                  <li onclick="show_Settings('labe_02_04_03')"><img src="icon-preferences.png">Kondiční cíle</li>
+                  <li onclick="show_Settings('labe_02_04_04')"><img src="icon-preferences.png">Plánovač cvičení</li>
+                  <li onclick="show_Settings('labe_02_04_05')"><img src="icon-preferences.png">Sledovač období</li>
+                  <li onclick="show_Settings('labe_02_04_06')"><img src="icon-preferences.png">Každoroční top zvyky</li>
+              </ul>
+              </li>
+
+          <li onclick="show_Submenu('labe_02_05')"><img src="icon-notifications.png">05 Ostatní / Informace
+              <ul id="labe_02_05">
+                  <li onclick="show_Settings('labe_02_05_01')"><img src="icon-notifications.png">Kontakty</li>
+                  <li onclick="show_Settings('labe_02_05_02')"><img src="icon-preferences.png">Hesla</li>
+                  <li onclick="show_Settings('labe_02_05_03')"><img src="icon-preferences.png">Seznam klíčú</li>
+                  <li onclick="show_Settings('labe_02_05_04')"><img src="icon-preferences.png">Finance</li>
+                  <li onclick="show_Settings('labe_02_05_05')"><img src="icon-preferences.png">Informace o kalendáři</li>
+              </ul>
+              </li>
+
         </ul>
       </div>
 
@@ -133,7 +189,7 @@
         <p>Tento obsah se zobrazí, když klikneš na "Monthly working notes".</p>
       </section>
 
-      <section id="labe_02_05">
+      <section id="labe_02_01_01">
         <h2>Monthly personal notes</h2>
         <p>Tento obsah se zobrazí, když klikneš na "Monthly personal notes".</p>
       </section>

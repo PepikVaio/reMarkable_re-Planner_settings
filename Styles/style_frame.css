@@ -6,14 +6,8 @@
  *                                                |___/    
  */
 
-:root {
-    --border: 5px;
-    --padding: 30px;
-}
-
-
 .frame {
-    box-shadow: inset 0 0 0 var(--border) #7f7f7f;
-    border-radius: 30px;
-    padding: calc(var(--border) + var(--padding));
+    box-shadow: inset 0 0 0 var(--main_Border) var(--main_Background-Color);
+    border-radius: var(--main_Radius);
+    padding: calc(var(--main_Border) + var(--main_Padding));
 }

@@ -12,7 +12,7 @@ function export_Settings() {
     var file_Name = settings.account_Name_First + "_" + settings.account_Name_Last;
     
     // Volitelné přidání hesla
-    var file_Password = settings.account_Password.replace(/\s+/g, '_'); // Nahrazení mezer podtržítky
+    var file_Password = settings.account_Password;
     if (file_Password) {
         file_Name += '_' + file_Password;
     }
@@ -37,7 +37,8 @@ function export_Settings() {
 // Funkce pro získání hodnoty z inputu podle ID
 function get_ValueById(id) {
     var element = document.getElementById(id);
-    return element ? element.value : ''; // Vrátí hodnotu inputu nebo prázdný řetězec
+    // Vrátí hodnotu inputu nebo prázdný řetězec
+    return element ? element.value : '';
 }
 
 // Funkce pro generování CSS obsahu

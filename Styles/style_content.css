@@ -6,12 +6,31 @@
  *                                                        |___/    
  */
 
+:root {
+    --menu_Margin-Top: 500px;
+    --menu_Width: 26%;
+    
+    --contact_Position_Left: 500px;
+}
+
+
 content {
     width: 100%;
     height: calc(85% - 15px);
     display: flex;
     align-items: flex-start;
     position: relative;
+}
+
+
+.box_Gray {
+    width: var(--menu_Width);
+    height: var(--menu_Margin-Top);
+    background-color: var(--main_Background-Color);
+    border-radius: var(--main_Radius) 0px 0px 0px;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 
@@ -26,17 +45,12 @@ credits {
 
 
 contact {
-  width: calc(100% - 500px);
+  width: calc(100% - var(--contact_Position_Left));
   display: flex;
   flex-direction: column;
   position: absolute;
   top: 0%;
-  left: 500px;
-}
-
-contact div:nth-child(1),
-contact div:nth-child(4) {
-    border-bottom: solid #7f7f7f 4px;
+  left: var(--contact_Position_Left);
 }
 
 contact div {
@@ -45,23 +59,51 @@ contact div {
   flex-direction: row;
 }
 
+contact div:nth-child(1),
+contact div:nth-child(4) {
+    border-bottom: solid var(--main_Background-Color) 4px;
+}
+
 contact text {
   height: 85px;
   font-size: 40px;
   line-height: 95px;
-  color: #7f7f7f;
+  color: var(--main_Background-Color);
 }
 
+
 menu {
-    width: 26%;
-    height: 100%;
+    width: var(--menu_Width);
+    height: calc(100% - var(--menu_Margin-Top));
     font-size: 30px;
-    background-color: #7f7f7f;
-    border-radius: 30px 0px 0px 30px;
-    padding-top: 500px;
+    background-color: var(--main_Background-Color);
+    border-radius: 0px 0px 0px var(--main_Radius);
+    margin-top: var(--menu_Margin-Top);
+    /* Přidává posuvník */
+    overflow: auto;
     position: absolute;
     top: 0;
     left: 0;
+}
+
+/* Standardní posuvník pro Webkit prohlížeče (Chrome, Safari) */
+menu::-webkit-scrollbar {
+    width: 10px;
+}
+
+menu::-webkit-scrollbar-thumb {
+    background-color: black;
+    border-radius: 5px;
+}
+
+menu::-webkit-scrollbar-track {
+    background: var(--main_Background-Color);
+}
+
+/* Standardní posuvník pro prohlížeče (Firefox) */
+menu {
+    scrollbar-width: thin;
+    scrollbar-color: black var(--main_Background-Color);
 }
 
 menu label {
@@ -69,24 +111,14 @@ menu label {
     padding: 10px 15px;
 }
 
-menu label:hover,
-menu ul li:hover {
-    cursor: pointer;
-    background-color: #f1f1f1;
-}
-
 menu ul {
     display: none;
-
     flex-direction: column;
-}
-
-menu a {
-    color: #333;
+    padding: 10px 0px;
 }
 
 menu li {
-    padding: 10px 15px;
+    padding: 10px 0px;
 }
 
 menu img {
@@ -95,25 +127,54 @@ menu img {
     margin-right: 10px;
 }
 
+menu ul li ul li {
+    padding: 10px 15px;
+    /* Volitelné, mění zobrazení podmenu */
+    background-color: var(--main_Background-Color);
+}
+
+menu ul li ul li:last-child {
+    margin-bottom: -20px;
+    padding-bottom: 10px;
+}
+
+menu label:hover,
+menu li:hover {
+    cursor: pointer;
+    background-color: #f1f1f1;
+}
+
+
 settings {
-    width: calc(100% - 26% - var(--border) - var(--padding));
+    width: calc(100% - var(--menu_Width) - var(--main_Border) - var(--main_Padding));
     height: 800px;
     position: absolute;
-    top: 500px;
-    left: 26%;
+    top: var(--menu_Margin-Top);
+    left: var(--menu_Width)
 }
 
 settings section {
-    height: 700px;
+    height: auto;
     display: none;
 
     flex-direction: column;
     padding-left: 20px;
 }
 
+.settings_General li:hover {
+    padding-left: 5px;
+}
+
+.settings_Pages li:nth-child(n) li:hover {
+    background-color: var(--main_Color);
+    padding-left: 20px;
+}
+
+
 section p {
     margin: 5px 0px 10px 5px;
 }
+
 
 subsection {
     display: flex;
@@ -121,9 +182,8 @@ subsection {
     column-gap: 15px;
     margin: 20px 0px;
     
-    border-bottom: solid #7f7f7f 4px;
+    border-bottom: solid var(--main_Background-Color) 4px;
 }
-
 
 subsection div {
     width: 100%;
@@ -155,7 +215,7 @@ subsection label {
 
 .box_Input:hover,
 .box_Input:hover {
-    box-shadow: 5px 5px 10px rgba(0, 123, 255, 1.5);
+    box-shadow: 5px 5px 10px var(--main_Color);
 }
 
 

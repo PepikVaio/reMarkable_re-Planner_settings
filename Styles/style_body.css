@@ -6,6 +6,14 @@
  *                  |__/                         |___/    
  */
 
+:root {
+    --main_Border: 5px;
+    --main_Background-Color: #7f7f7f;
+    --main_Color: red;
+    --main_Padding: 30px;
+    --main_Radius: 30px;
+}
+
 html {
     display: flex;
     justify-content: center;
@@ -27,7 +35,7 @@ body {
 	width: 1404px;
     height: 1872px;
 	margin: 0;
-    padding: 30px;
+    padding: var(--main_Padding);
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -43,5 +51,5 @@ body ul {
 }
 
 body a {
-  text-decoration: none;
+    text-decoration: none;
 }
