@@ -14,14 +14,14 @@
     max-height: calc(6840px / 3);
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: url(../Images/image_Background.png);
+    background-image: url(../images/image_Background.png);
 }
 
 #image_Developer {
   width: 120px;
   height: 120px;
   background-repeat: no-repeat;
-  background-image: url(../Images/image_Developer.png);
+  background-image: url(../images/image_Developer.png);
 }
 
 #icon_Email,
@@ -41,8 +41,8 @@
 	transform: translate(-120%, -55%)
 }
 
-#icon_Email {background-image: url(../Images/icon_Email.png);}
-#icon_Language {background-image: url(../Images/icon_Language.png);}
-#icon_Menu {background-image: url(../Images/icon_Menu.png);}
-#icon_Menu_Close {background-image: url(../Images/icon_Menu_Close.png);}
-#icon_Send_Settings {background-image: url(../Images/icon_Send_Settings.png);}
+#icon_Email {background-image: url(../images/icon_Email.png);}
+#icon_Language {background-image: url(../images/icon_Language.png);}
+#icon_Menu {background-image: url(../images/icon_Menu.png);}
+#icon_Menu_Close {background-image: url(../images/icon_Menu_Close.png);}
+#icon_Send_Settings {background-image: url(../images/icon_Send_Settings.png);}
