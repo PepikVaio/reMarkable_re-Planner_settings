@@ -9,17 +9,17 @@
 /* for Header */
 @font-face {
 	font-family: "Arizonia Regular";
-	src: url(../Fonts/Arizonia-Regular.ttf)
+	src: url(../fonts/Arizonia-Regular.ttf)
 }
 
 /* for Header h1:first-letter */
 @font-face {
 	font-family: "NocturneSerif Regular";
-	src: url(../Fonts/NocturneSerif-Regular.ttf)
+	src: url(../fonts/NocturneSerif-Regular.ttf)
 }
 
 /* for Header::after */
 @font-face {
 	font-family: "Caladea Regular";
-	src: url(../Fonts/Caladea-Regular.ttf)
+	src: url(../fonts/Caladea-Regular.ttf)
 }
