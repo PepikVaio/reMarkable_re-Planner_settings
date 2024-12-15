@@ -1,0 +1,19 @@
+/* Responsivní přizpůsobení pro menší obrazovky */
+@media (max-width: 1404px) {
+    body {
+/*	   border: solid blue 1px;*/
+    }
+    
+    credits {
+/*        display: none;*/
+    }
+    
+    
+
+}
+
+@media (max-width: 1615px) {
+    header .menu_Visible {
+        left: 0px;
+    }
+}

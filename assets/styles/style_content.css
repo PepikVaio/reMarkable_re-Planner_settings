@@ -1,0 +1,409 @@
+/*
+ *    ___         _           _             _   _   _              
+ *   / __|___ _ _| |_ ___ _ _| |_   ___ ___| |_| |_(_)_ _  __ _ ___
+ *  | (__/ _ \ ' \  _/ -_) ' \  _| (_-</ -_)  _|  _| | ' \/ _` (_-<
+ *   \___\___/_||_\__\___|_||_\__| /__/\___|\__|\__|_|_||_\__, /__/
+ *                                                        |___/    
+ */
+
+:root {
+	--menu_Margin-Top: 250px;
+	--menu_Width: 26%;
+
+	--contact_Position_Left: 250px;
+}
+
+credits {
+	width: 100%;
+	background-color: WhiteSmoke;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+credits .credits {
+	width: 1615px;
+	height: 200px;
+	padding: 30px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.credits contact {
+	display: flex;
+	flex-direction: column;
+	padding: 10px 0px 0px 10px;
+	position: relative;
+}
+
+contact text {
+	color: var(--main_Background-Color);
+}
+
+contact div > text:nth-child(1) {
+	color: black;
+}
+
+contact > div > text:nth-child(1) {
+	font-size: 35px;
+}
+
+contact div text:nth-child(2) {
+	padding-bottom: 10px;
+}
+
+contact:has(> :nth-child(2):hover) > :nth-child(3) {
+	transform: translateY(5px);
+}
+
+contact:has(:nth-child(3):hover) > :nth-child(2) {
+	transform: translateY(-5px);
+}
+
+contact > :nth-child(4) {
+	white-space: nowrap;
+	cursor: pointer;
+	position: absolute;
+	top: 145px;
+	left: -100px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+content {
+/*
+	width: 100%;
+	background-color: WhiteSmoke;
+
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+*/
+}
+
+
+.flex_Row {
+	display: flex;
+	flex-direction: row;
+}
+
+.flex_Column {
+	display: flex;
+	flex-direction: column;
+}
+
+.button {
+	width: fit-content;
+	transition: var(--main_Transition);
+}
+
+.button_Small:hover {
+	background-color: #E0E0E0;
+	box-shadow:
+		5px 0px 0px 3px #E0E0E0,
+		-5px 0px 0px 3px #E0E0E0;
+	border-radius: 7px;
+	transform: scale(1.1);
+	transform: translateX(5px);
+}
+
+.button_Large {
+	background-color: white;
+	margin: 0px 15px;
+	padding: 10px 25px 10px 50px;
+
+	border: 3px solid black;
+	border-radius: 100px;
+	box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+}
+
+.button_Large:hover {
+	border: 3px solid black;
+	box-shadow:
+		0px 0px 10px rgba(0, 0, 0, 0.5),
+		0px 5px 20px rgba(0, 0, 0, 0.3);
+	transform: scale(1.03);
+}
+
+
+
+
+
+
+
+
+menu {
+	/*
+    width: var(--menu_Width);
+    height: calc(100% - var(--menu_Margin-Top));
+    font-size: 15px;
+    background-color: var(--main_Background-Color);
+    border-radius: 0px 0px 0px var(--main_Radius);
+    margin-top: var(--menu_Margin-Top);
+    overflow: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+*/
+
+	/*
+    width: 30px;
+    height: 30px;
+    background-color: black;
+    
+*/
+}
+
+/* Standardní posuvník pro Webkit prohlížeče (Chrome, Safari) */
+menu::-webkit-scrollbar {
+	/*    width: 5px;*/
+}
+
+menu::-webkit-scrollbar-thumb {
+	/*
+    background-color: black;
+    border-radius: 5px;
+*/
+}
+
+menu::-webkit-scrollbar-track {
+	/*    background: var(--main_Background-Color);*/
+}
+
+/* Standardní posuvník pro prohlížeče (Firefox) */
+menu {
+	/*
+    scrollbar-width: thin;
+    scrollbar-color: black var(--main_Background-Color);
+*/
+}
+
+menu label {
+	/*
+    display: flex;
+    padding: 10px 15px;
+*/
+}
+
+menu ul {
+	/*
+    display: none;
+    flex-direction: column;
+    padding: 10px 0px;
+*/
+}
+
+menu li {
+	/*    padding: 10px 0px;*/
+}
+
+menu img {
+	/*
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+*/
+}
+
+menu ul li ul li {
+	/*    padding: 10px 15px;*/
+	/* Volitelné, mění zobrazení podmenu */
+	/*    background-color: var(--main_Background-Color);*/
+}
+
+menu ul li ul li:last-child {
+	/*
+    margin-bottom: -20px;
+    padding-bottom: 10px;
+*/
+}
+
+menu label:hover,
+menu li:hover {
+	/*
+    cursor: pointer;
+    background-color: #f1f1f1;
+*/
+}
+
+
+settings {
+	/*
+    width: calc(100% - var(--menu_Width) - var(--main_Border) - var(--main_Padding));
+    height: 800px;
+    position: absolute;
+    top: var(--menu_Margin-Top);
+    left: var(--menu_Width)
+*/
+}
+
+/*
+settings section {
+    height: auto;
+    display: none;
+
+    flex-direction: column;
+    padding-left: 20px;
+}
+*/
+
+/*
+.settings_General li:hover {
+    padding-left: 5px;
+}
+*/
+
+/*
+.settings_Pages li:nth-child(n) li:hover {
+    background-color: var(--main_Color);
+    padding-left: 20px;
+}
+*/
+
+
+/*
+section p {
+    margin: 5px 0px 10px 5px;
+}
+*/
+
+
+/*
+subsection {
+    display: flex;
+    flex-direction: row;
+    column-gap: 15px;
+    margin: 20px 0px;
+    
+    border-bottom: solid var(--main_Background-Color) 4px;
+}
+*/
+
+/*
+subsection div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+*/
+
+/*
+subsection div input {
+    height: 50px;
+    width: 100%;
+}
+*/
+
+/*
+subsection label {
+    margin: 0px 0px 5px 5px;
+}
+*/
+
+
+/*
+.box_Input {
+    font-size: 16px;
+    margin-bottom: 25px;
+    padding: 10px 15px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease;
+}
+*/
+
+/*
+.box_Input:hover,
+.box_Input:hover {
+    box-shadow: 5px 5px 10px var(--main_Color);
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Zatím nemám použito */
+
+/*
+.hr_02 {
+  width: calc(100% - 350px - 30px);
+  height: 1px;
+  margin-left: 350px;
+}
+*/
+
+
+
+/*
+h3 {
+  width: calc(100% - 350px - 50px);
+  font-size: 70px;
+  display: flex;
+  justify-content: flex-end;
+  margin-left: 300px;
+  margin-top: 50px;
+  margin-bottom: 10px;
+}
+*/
+
+/*
+subsection {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+}
+*/
+
+/*
+subsection label {
+  width: calc(350px - 15px);
+  color: white;
+  font-size: 55px;
+  text-decoration: underline;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: flex-end;
+}
+*/
+
+/*
+subsection div {
+  width: calc(100% - 350px - 10px);
+  color: #7f7f7f;
+  font-size: 30px;
+  margin-top: 60px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+    
+    margin-left: 400px;
+}
+*/

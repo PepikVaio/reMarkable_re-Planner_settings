@@ -1,0 +1,48 @@
+/*
+ *   ___                               _   _   _              
+ *  |_ _|_ __  __ _ __ _ ___   ___ ___| |_| |_(_)_ _  __ _ ___
+ *   | || '  \/ _` / _` / -_) (_-</ -_)  _|  _| | ' \/ _` (_-<
+ *  |___|_|_|_\__,_\__, \___| /__/\___|\__|\__|_|_||_\__, /__/
+ *                 |___/                             |___/    
+ */
+
+#image_Background {
+    width: 100%;
+    height: calc(100vw / 3);
+
+    max-width: 6840px;
+    max-height: calc(6840px / 3);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(../Images/image_Background.png);
+}
+
+#image_Developer {
+  width: 120px;
+  height: 120px;
+  background-repeat: no-repeat;
+  background-image: url(../Images/image_Developer.png);
+}
+
+#icon_Email,
+#icon_Language,
+#icon_Menu,
+#icon_Menu_Close,
+#icon_Send_Settings {
+  width: 30px;
+  height: 30px;
+  background-repeat: no-repeat;
+}
+
+#icon_Email,
+#icon_Send_Settings {
+	position: absolute;
+	top: 50%;
+	transform: translate(-120%, -55%)
+}
+
+#icon_Email {background-image: url(../Images/icon_Email.png);}
+#icon_Language {background-image: url(../Images/icon_Language.png);}
+#icon_Menu {background-image: url(../Images/icon_Menu.png);}
+#icon_Menu_Close {background-image: url(../Images/icon_Menu_Close.png);}
+#icon_Send_Settings {background-image: url(../Images/icon_Send_Settings.png);}

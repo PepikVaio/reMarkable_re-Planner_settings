@@ -1,0 +1,25 @@
+/*
+ *   _____        _            _   _   _              
+ *  |_   _|____ _| |_   ______| |_| |_(_)_ _  __ _ ___
+ *    | |/ -_) \ /  _| (_-< -_)  _|  _| | ' \/ _` (_-<
+ *    |_|\___/_\_\\__| /__|___|\__|\__|_|_||_\__, /__/
+ *                                           |___/    
+ */
+
+/* Header */
+#text_Title::before {content: "re-Planner"}
+
+/* Credits */
+#text_Name::before {content: "Wajsar Josef";}
+#text_Name2::before {content: "Custom settings for re-Planner";}
+#text_Github::before  {content: "Github";}
+#text_Shop::before  {content: "Etsy shop";}
+
+#text_Email::before  {content: "Contact";}
+#text_Send_Settings::before  {content: "Send settings";}
+
+/* Content */
+
+
+
+
